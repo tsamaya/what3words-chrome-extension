@@ -15,6 +15,14 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 // The onClicked callback function.
 function onClickHandler(info, tab) {
   var sText = info.selectionText;
+  // replace all _,;:\- /!@#$%&* by a .
+  sText = sText.replace(/[_,;:\- \/!@#$%&*]/g, '.');
+  // replace all .. by a .
+  sText = sText.replace(/\.\.+/g, '.');
+  // remove first string char if it is a .
+  sText = sText.replace(/^\.+/, '');
+  // remove trailling .
+  sText = sText.replace(/\.$/, '');
   //if(sText.match(/^\p{L}+\.\p{L}+\.\p{L}+$/)) {
   if (sText.split('.').length === 3 && sText.split(' ').length === 1) {
     var url = "http://w3w.co/" + encodeURIComponent(sText);
