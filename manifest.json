@@ -1,0 +1,16 @@
+{
+  "name": "what3words right-click menu",
+  "description": "search for a what3words address",
+  "version": "1.0.0",
+  "icons": {
+    "16": "images/what3words_pin_16x16.png",
+    "32": "images/what3words_pin_32x32.png",
+    "128": "images/what3words_pin_128x128.png"
+  },
+  "permissions": ["contextMenus"],
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2
+}
